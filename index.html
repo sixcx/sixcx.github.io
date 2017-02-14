@@ -162,6 +162,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js-grammar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/14/js-grammar/">js�﷨</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/14/js-grammar/" class="archive-article-date">
+  	<time datetime="2017-02-14T13:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="�����﷨"><a href="#�����﷨" class="headerlink" title="�����﷨"></a>�����﷨</h1><h2 id="����"><a href="#����" class="headerlink" title="����"></a>����</h2><p>js����ִ�е�λΪ�У�һ��һ�е�ִ�У�һ����˵��һ�о���һ�����䡣<br>����(statement)��Ϊ������ĳ�����������еĲ��������磺</p>
+<pre><code>var a = 1 + 1;
+</code></pre><p>1 + 1 Ϊ����ʽ(expression),Ϊ�˵õ�����ֵ�ļ���ʽ������������ʽ����Ϊ:����һ�㲻��Ҫ����ֵ������ʽһ���᷵��һ��ֵ��<br>js������Ԥ��Ϊֵ�ĵط�������ʹ�ñ���ʽ��һ���������԰�����������ʽ�������ѷֺŽ�β��һ���ֺžͱ�ʾ�����������ֺ�ǰ������û�����ݣ�js������Ϊ�����䡣����ʽ����Ҫ�ֺŽ�β���ӷֺ�����Ϊ���䣬���κ����塣</p>
+<h2 id="����-1"><a href="#����-1" class="headerlink" title="����"></a>����</h2><h3 id="����-2"><a href="#����-2" class="headerlink" title="����"></a>����</h3><p>�����Ƕ�ֵ������  <code>var a = 1</code><br>������a���ٽ�������֮�佨�����ù�ϵ�����ǽ�1��ֵ��a��var��ʾ�����������֪ͨ�������棬����һ������a��ʵ������:</p>
+<pre><code>var a;
+a = 1;
+</code></pre><p>ֻ��������������ֵ���ñ�����ֵ��undefined.��дvarҲ����Ч�ģ������ᴴ��ȫ�ֱ�����</p>
+<blockquote>
+<p>var a = 1��a = 1,����������Ч����ȫ��ͬ���ϸ���˵���ʲ���ȫ��ͬ��ֻ��var a= 1��������������a = 1�൱��window[“a”] = 1.���������Կ�ɾ�������Կ���delete a.</p>
+</blockquote>
+<p>����û������ֱ��ʹ�ã��ͻر�����δ���塣����������û�����ƣ����Ը����������͵�ֵ��������һ�����ڵı������ڶ���������Ч����ֵ���Ḳ��ǰ����ֵ��</p>
+<h3 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h3><p>js���湤����ʽ���Ƚ������룬��ȡ���б������ı�������һ��һ�е����С������������б������������䶼�ᱻ������������ͷ������Ϊ��������(hoisting)������:</p>
+<pre><code>console.log(a);
+var a = 1;
+</code></pre><p>ʵ����:</p>
+<pre><code>var a;
+console.log(a);
+a = 1;
+</code></pre><p>��ʾΪundefined,������var�����ı������ᷢ������������</p>
+<blockquote>
+<p>ע��js���������������ڻ���������;��(���ȼ�)��<br>1.���Զ�������������this,arguments�������������������¶���this<br>2.��ʽ����<br>3.��������<br>4.var�����ı���</p>
+</blockquote>
+<h2 id="��ʶ��"><a href="#��ʶ��" class="headerlink" title="��ʶ��"></a>��ʶ��</h2><p>����ʶ������������һ�����ƣ����Ϊ���������Լ���������<br>��������:��һ���ַ�����������Unicode��ĸ��$��_,�ڶ������Ժ��Ļ�������0-9<br>���Ŀ���������ʶ����</p>
+<blockquote>
+<p>js��һЩ�����ֲ���������ʶ��:arguments��break��case��catch��class��const��continue��debugger��default��delete��do��else��enum��eval��export��extends��false��finally��for��function��if��implements��import��in��instanceof��interface��let��new��null��package��private��protected��public��return��static��super��switch��this��throw��true��try��typeof��var��void��while��with��yield<br>Infinity NaN undefined��Ȼ���Ǳ����֣�����Ϊ�����ر����壬Ҳ��������ʶ</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/14/js-grammar/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo-learn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -326,6 +413,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
