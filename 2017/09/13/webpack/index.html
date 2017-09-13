@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,nodejs,css,vuejs,reactjs,mobile" />
+  <meta name="keywords" content="-webpack -构建工具," />
 
 
 
@@ -95,15 +95,22 @@
 
 
 
-<meta name="description" content="心有猛虎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="记录一些生活和学习">
-<meta property="og:url" content="https://sixcx.github.io/index.html">
+<meta name="description" content="作为一款模块加载器和打包工具，webpack能帮助我们把把各种资源作为模块来处理和使用。掌握其使用会为我们在构建项目时省去大量的时间，在前端工程化的今天，webpack是每个前端都要去学习和掌握的。
+
+webpack的优势从一个或多个入口文件开始，webpack从此开始找到项目所依赖的文件，打包成一个或多个js文件。webpack是一个模块化的处理方案，我们无需去寻找文件所在位置，webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack学习">
+<meta property="og:url" content="https://sixcx.github.io/2017/09/13/webpack/index.html">
 <meta property="og:site_name" content="记录一些生活和学习">
-<meta property="og:description" content="心有猛虎">
+<meta property="og:description" content="作为一款模块加载器和打包工具，webpack能帮助我们把把各种资源作为模块来处理和使用。掌握其使用会为我们在构建项目时省去大量的时间，在前端工程化的今天，webpack是每个前端都要去学习和掌握的。
+
+webpack的优势从一个或多个入口文件开始，webpack从此开始找到项目所依赖的文件，打包成一个或多个js文件。webpack是一个模块化的处理方案，我们无需去寻找文件所在位置，webpack">
+<meta property="og:updated_time" content="2017-09-13T06:58:38.402Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录一些生活和学习">
-<meta name="twitter:description" content="心有猛虎">
+<meta name="twitter:title" content="webpack学习">
+<meta name="twitter:description" content="作为一款模块加载器和打包工具，webpack能帮助我们把把各种资源作为模块来处理和使用。掌握其使用会为我们在构建项目时省去大量的时间，在前端工程化的今天，webpack是每个前端都要去学习和掌握的。
+
+webpack的优势从一个或多个入口文件开始，webpack从此开始找到项目所依赖的文件，打包成一个或多个js文件。webpack是一个模块化的处理方案，我们无需去寻找文件所在位置，webpack">
 
 
 
@@ -133,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://sixcx.github.io/"/>
+  <link rel="canonical" href="https://sixcx.github.io/2017/09/13/webpack/"/>
 
 
 
 
 
-  <title>记录一些生活和学习</title>
+  <title>webpack学习 | 记录一些生活和学习</title>
   
 
 
@@ -158,8 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,9 +258,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -284,9 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/13/webpack/" itemprop="url">webpack学习</a></h1>
+          <h1 class="post-title" itemprop="name headline">webpack学习</h1>
         
 
         <div class="post-meta">
@@ -367,9 +371,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>作为一款模块加载器和打包工具，webpack能帮助我们把把各种资源作为模块来处理和使用。掌握其使用会为我们在构建项目时省去大量的时间，在前端工程化的今天，webpack是每个前端都要去学习和掌握的。</p>
 </blockquote>
 <h3 id="webpack的优势"><a href="#webpack的优势" class="headerlink" title="webpack的优势"></a>webpack的优势</h3><p>从一个或多个入口文件开始，webpack从此开始找到项目所依赖的文件，打包成一个或多个js文件。webpack是一个模块化的处理方案，我们无需去寻找文件所在位置，webpack会将所有的依赖加载，个更加方便。</p>
@@ -448,8 +450,6 @@
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.css88.com/doc/webpack/" target="_blank" rel="external">webpack3.5.5中文文档</a></p>
 <p><a href="http://www.jianshu.com/p/42e11515c10f#" target="_blank" rel="external">入门Webpack，看这篇就够了</a></p>
 
-          
-        
       
     </div>
     
@@ -464,347 +464,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sixcx.github.io/2017/02/14/js-grammar/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="bobo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录一些生活和学习">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/14/js-grammar/" itemprop="url">js语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T21:18:47+08:00">
-                2017-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/webpack-构建工具/" rel="tag"># -webpack -构建工具</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p>js程序执行单位为行，一行一行的执行，一般来说，一行就是一条语句。<br>语句(statement)是为了完成某种任务而进行的操作。比如：</p>
-<pre><code>var a = 1 + 1;
-</code></pre><p>1 + 1 为表达式(expression),为了得到返回值的计算式。语句与表达式区别为:语句一般不需要返回值，表达式一定会返回一个值。<br>js语言中预期为值的地方都可以使用表达式，一条语句可以包含多个表达式。语句已分号结尾，一个分号就表示语句结束，分号前面可以没有内容，js引擎视为空语句。表达式不需要分号结尾，加分号则视为语句，无任何意义。</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>变量是对值的引用  <code>var a = 1</code><br>先声明a，再将两个数之间建立引用关系，就是将1赋值给a。var表示变量声明命令，通知解释引擎，创建一个变量a。实际上是:</p>
-<pre><code>var a;
-a = 1;
-</code></pre><p>只是声明变量不赋值，该变量的值是undefined.不写var也是有效的，不过会创建全局变量。</p>
-<blockquote>
-<p>var a = 1和a = 1,这两条语句效果完全相同，严格来说本质不完全相同，只有var a= 1才是声明变量。a = 1相当于window[“a”] = 1.对象的属性可删除，所以可以delete a.</p>
-</blockquote>
-<p>变量没有声明直接使用，就回报变量未定义。变量的类型没有限制，可以赋予各种类型的值，若声明一个存在的变量，第二次声明无效，赋值后会覆盖前面的值。</p>
-<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>js引擎工作方式是先解析代码，获取所有被声明的变量，再一行一行的运行。结果就是所有变量的声明语句都会被提升到代码的头部，即为变量提升(hoisting)。比如:</p>
-<pre><code>console.log(a);
-var a = 1;
-</code></pre><p>实际上:</p>
-<pre><code>var a;
-console.log(a);
-a = 1;
-</code></pre><p>显示为undefined,不是用var声明的变量不会发生变量提升。</p>
-<blockquote>
-<p>注：js有四种在作用域内获得提升的途径(优先级)：<br>1.语言定义的声明，如this,arguments，不能在作用域内重新定义this<br>2.形式参数<br>3.函数声明<br>4.var声明的变量</p>
-</blockquote>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>用来识别具体对象的一个名称，最常见为变量名，以及函数名。<br>命名规则:第一个字符可以是任意Unicode字母，$和_,第二个及以后的还可以用0-9<br>中文可以用作标识符，</p>
-<blockquote>
-<p>js有一些保留字不能用作标识符:arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield<br>Infinity NaN undefined虽然不是保留字，但因为具有特别含义，也不用作标识</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sixcx.github.io/2017/02/14/hexo-learn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="bobo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记录一些生活和学习">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/14/hexo-learn/" itemprop="url">hexo搭建github博客的学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T20:09:22+08:00">
-                2017-02-14
-              </time>
+              <a href="/2017/02/14/js-grammar/" rel="next" title="js语法">
+                <i class="fa fa-chevron-left"></i> js语法
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h4><blockquote>
-<p>使用github pages服务器搭建博客的好处:<br>1.静态文件，访问速度快<br>2.免费，无需花钱就能搭建一个自己的博客<br>3.数据安全，基于github<br>4.只需要写自己的文章上传即可<br>5.可以随意绑定自己的域名</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/14/hexo-learn/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -814,10 +503,11 @@ a = 1;
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -825,6 +515,10 @@ a = 1;
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -845,8 +539,17 @@ a = 1;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -902,6 +605,22 @@ a = 1;
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack的优势"><span class="nav-number">1.</span> <span class="nav-text">webpack的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entry配置"><span class="nav-number">2.</span> <span class="nav-text">entry配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output配置"><span class="nav-number">3.</span> <span class="nav-text">output配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source-Maps-方便调试"><span class="nav-number">4.</span> <span class="nav-text">Source Maps(方便调试)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#devServer-构建本地服务器"><span class="nav-number">5.</span> <span class="nav-text">devServer(构建本地服务器)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loaders"><span class="nav-number">6.</span> <span class="nav-text">loaders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plugins-插件"><span class="nav-number">7.</span> <span class="nav-text">Plugins(插件)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析-Resolve"><span class="nav-number">8.</span> <span class="nav-text">解析(Resolve)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1038,6 +757,10 @@ a = 1;
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
