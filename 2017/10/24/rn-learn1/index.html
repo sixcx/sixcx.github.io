@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="--react-native," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="最近开始接触react-native，把自己学习这门技术的过程记录下来，也避免以后遇到类似的坑。其实会react，上手RN并不难，难的是其中原生的东西以及配置和使用中各种各样的陷阱。  今天重新写博客的时候，执行hexo new命令突然报了一个错，在以前是从没见过的：1&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProv">
+<meta name="keywords" content="--react-native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记1">
+<meta property="og:url" content="https://sixcx.github.io/2017/10/24/rn-learn1/index.html">
+<meta property="og:site_name" content="记录一些生活和学习">
+<meta property="og:description" content="最近开始接触react-native，把自己学习这门技术的过程记录下来，也避免以后遇到类似的坑。其实会react，上手RN并不难，难的是其中原生的东西以及配置和使用中各种各样的陷阱。  今天重新写博客的时候，执行hexo new命令突然报了一个错，在以前是从没见过的：1&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProv">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oyd1fpqd4.bkt.clouddn.com/bash.png">
+<meta property="og:image" content="http://oyd1fpqd4.bkt.clouddn.com/dir.png">
+<meta property="og:updated_time" content="2017-10-25T07:22:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记1">
+<meta name="twitter:description" content="最近开始接触react-native，把自己学习这门技术的过程记录下来，也避免以后遇到类似的坑。其实会react，上手RN并不难，难的是其中原生的东西以及配置和使用中各种各样的陷阱。  今天重新写博客的时候，执行hexo new命令突然报了一个错，在以前是从没见过的：1&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProv">
+<meta name="twitter:image" content="http://oyd1fpqd4.bkt.clouddn.com/bash.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sixcx.github.io/2017/10/24/rn-learn1/"/>
+
+
+
+
+
+  <title>react-native学习笔记1 | 记录一些生活和学习</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">记录一些生活和学习</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">bobo的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tag/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/category/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sixcx.github.io/2017/10/24/rn-learn1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bobo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录一些生活和学习">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react-native学习笔记1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T18:01:59+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>最近开始接触react-native，把自己学习这门技术的过程记录下来，也避免以后遇到类似的坑。其实会react，上手RN并不难，难的是其中原生的东西以及配置和使用中各种各样的陷阱。</p>
+</blockquote>
+<p>今天重新写博客的时候，执行hexo new命令突然报了一个错，在以前是从没见过的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>不过页面还是会创建，网上看了原因之后，在项目下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<p>问题解决，不行的话就重新装一次hexo-cli：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall hexo-cli -g</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<p>其实在写RN的时候也会遇到各种各样的奇葩问题，慢慢解决才能够成长。</p>
+<h3 id="初识react-native"><a href="#初识react-native" class="headerlink" title="初识react-native"></a>初识react-native</h3><p>在学校的时候就听过react-native的大名，当时在实习用的是ng的技术栈就没有深入去了解(并不是技术狂啊-_-)。</p>
+<p>简单来说，react-native的思想就是：</p>
+<blockquote>
+<p>Learn once, write anywhere</p>
+</blockquote>
+<p>学习一次，在任何平台上编写。至少现在来说是很有用的，对技术人员是技术上的拓展，对公司而言，不用招专门的android或者iOS开发人员，控制成本。react-native由Facebook出品，前端人员学习起来应该比较容易，熟悉ES6语法，懂一点react，结合官方文档几天就可以上手。安卓开发人员可能要难一点，ES6和react就要花点时间了。</p>
+<p>推荐使用mac来开发，因为现在只支持在mac上面开发iOS，windows上能不能装一个虚拟机来开发还没试过。不过如果你不需要iOS应用的话，windows也是一个不错的选择。</p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>首先搭建iOS开发环境，在Mac上面很方便就搭建好了。假设你已经在你的 Mac上装好了Homebrew，nodejs等工具，那么就开始安装react-native-cli，这是用于执行创建、初始化、更新项目、运行打包服务（packager）等任务的工具，很强大。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure></p>
+<p>也可以使用yarn来代替npm，不过语法可能不太相同，我觉得网络允许的情况下看个人喜好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yarn</div></pre></td></tr></table></figure></p>
+<p>安装好之后，需要在Mac上安装Xcode，运行iOS必不可少的软件，可以在App Store上面直接下载，比较大，需要一点时间下载。还有一些官方推荐下载的工具，比如：watchman，flow，nuclide等，具体可以看<a href="http://reactnative.cn/docs/0.49/getting-started.html" target="_blank" rel="external">文档</a>。至于编辑器或者IDE，webstorm，sublime，vs code都可以选择，这个就自己选择了。</p>
+<p>iOS环境基本就是这样，Xcode实在是省事，而且还自带模拟器。接下来搭建android开发环境：</p>
+<p>官方推荐使用Android studio来开发，如果需要可以按照文档来下载安装，版本要在2.0以上。也可以不要这个软件，需要下载Android SDK，JDK，还要配置ANDROID_HOME环境变量，下载好依赖之后在~/.bash_profile文件中配置，如果没有此文件就创建一个。可以使用open命令来打开文件。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open ~/.bash_profile</div></pre></td></tr></table></figure></p>
+<p>此文件的配置如图：<img src="http://oyd1fpqd4.bkt.clouddn.com/bash.png" alt="image">其中，配置你的javahome和androidhome，分别指向你电脑上的jdk路径和Androidsdk路径。完成之后，android环境也完成了，就可以创建项目来试试。</p>
+<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>使用react-native-cli工具来快速生成项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native init appName</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，使用init命令创建默认使用的是react和react-native的最新版本。由于react-native在0.45之后需要boost库编译，这个库庞大且需要翻墙，所以如果没那么大的需求需要用最新版本，可以用0.44.3的版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native init appName --version 0.44.3</div></pre></td></tr></table></figure></p>
+<p>那么就会使用react-native的0.44.3的版本。执行完命令之后需要等待一段时间，此期间会下载很多依赖，项目创建完成之后是这样的：<img src="http://oyd1fpqd4.bkt.clouddn.com/dir.png" alt="image">我使用的是vs code编辑器，其中android文件夹和iOS文件夹分别是两种平台的东西，一般写原生的东西才需要。app文件夹是自己创建的，在这里写组件和逻辑样式那些，主要在这里操作。index.android.js和index.ios.js是程序开始运行的地方，需要注意的是里面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AppRegistry.registerComponent(&apos;appName&apos;, () =&gt; appName);</div></pre></td></tr></table></figure></p>
+<p>第一个appName是执行init命令时命名的名字，必须保持一致，否则无法运行。</p>
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>接下来就可以运行项目了，对于iOS执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native run-ios</div></pre></td></tr></table></figure></p>
+<p>等待一些时间，就会弹出iOS模拟器，也可以在Xcode上打开.xcodeproj文件，点击run按钮运行，还可以选择不同的iPhone来测试。</p>
+<p>Mac上cmd+r刷新页面，cmd+d打开一个菜单，包括</p>
+<blockquote>
+<p>Reload</p>
+<p>Debug JS Remotely</p>
+<p>Enable Live Reload</p>
+<p>Enable Hot Reloading</p>
+<p>Toggle Inspector</p>
+<p>Show Perf Monitor</p>
+<p>Start/Stop Sampling Profiler</p>
+<p>Dev Settings</p>
+</blockquote>
+<p>Reload是重新加载，第二个是在浏览器里面调试，还有其他热更新和设置等。</p>
+<p>对于android，运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native run-android</div></pre></td></tr></table></figure></p>
+<p>按惯例，等待一段时间，会提示你错误，原因是iOS是Mac自带模拟器，android要么下一个模拟器，要么连接自己的手机(android系统的)。连接自己的手机需要开发者权限，可以使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb devices</div></pre></td></tr></table></figure></p>
+<p>来查看是否连接上了手机。</p>
+<p>假设使用手机，运行run-android之后，就会在手机上装一个以你项目名命名的app，可以修改名字和图标，在android文件夹下面的app/src/res，其中values文件夹改名字，其它文件夹改图标。</p>
+<p>安装后app之后，打开发现白屏了，此时需要打开app的悬浮窗权限，再次打开就运行正常了。我遇到过端口占用的情况，默认是8081端口，可以修改端口来预防错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native start --port xxxx</div></pre></td></tr></table></figure></p>
+<p>这个xxxx就是你自己想用的端口号。现在的模式是USB连接手机，不使用USB需要保证电脑和手机在同一局域网，并且需要在Dev Settings里面设置Debugging，里面填写局域网的IP地址，还要加上端口号，如果你没修改就是8081，改了就是修改之后的端口。</p>
+<p>现在为止，断开USB，重新打开app，摇一摇手机就可以看到刚才那个菜单，将IP设置好，以后就可以用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure></p>
+<p>来运行app。</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>这是我自己学习react-native的第一篇，参考了官方文档和自己搭建所遇到的坑，主要是环境搭建和项目创建运行，以后会慢慢写自己使用中的想法和问题。</p>
+<p>参考：<br>    <a href="http://reactnative.cn/docs/0.49/getting-started.html" target="_blank" rel="external">官方文档</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag"># --react-native</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/13/webpack/" rel="next" title="webpack学习">
+                <i class="fa fa-chevron-left"></i> webpack学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="bobo" />
+          
+            <p class="site-author-name" itemprop="name">bobo</p>
+            <p class="site-description motion-element" itemprop="description">心有猛虎</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初识react-native"><span class="nav-number">1.</span> <span class="nav-text">初识react-native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建项目"><span class="nav-number">3.</span> <span class="nav-text">新建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行项目"><span class="nav-number">4.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bobo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  
+</body>
+</html>
